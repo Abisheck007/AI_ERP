@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/profile-page.css">
+</head>
+
+<body>
+    <div class="dashboard"></div>
+    <div class="top-bar">
+        <div class="leftside">
+            <input type="text" name="" class="search" placeholder="Search...">
+            <button
+                style="width: 30px;height: 30px;margin-top: 20px;margin-left: 10px;border: none;background-color: white;"><img
+                    src="../images/plus.png" alt="" class="in-btn"></button>
+        </div>
+
+        <div class="rightside">
+            <button class="rs-btns share-docs">
+                <img src="../images/share.png" alt="" class="rs-img">
+                <div class="msg2">Share documents ideas..</div>
+            </button>
+            <button class="rs-btns todo-para"><img src="../images/correct-gray.png" alt="" class="rs-img1">
+                <div class="msg3">Todo items</div>
+            </button>
+
+            <button class="rs-btns user-wrapper js-click" id="userBtn">
+                <div class="user-border">
+                    <img src="../images/user.png" alt="" class="rs-img2">
+                    <div class="msg1">ERP Demo1 Admin</div>
+                </div>
+            </button>
+
+            <button class="rs-btns timesheet"
+                style="margin-left:40px;border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/clock.png" alt="" class="rs-img3">
+                <div class="msg4">My Timesheets</div>
+            </button>
+            <button class="rs-btns notify-data"
+                style="border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/notification.png" alt="" class="rs-img4">
+                <div class="msg5">Notifications</div>
+            </button>
+
+            <div class="dropdown" id="dropdownMenu">
+                <button><a href="profile-page.html" class="drop-class">My Profile</a></button>
+                <button><a href="edit-profile-data.html" class="drop-class">Edit Profile</a></button>
+                <button><a href="login.html" class="drop-class">Logout</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div style="display: flex;margin-right: 20px;font-size: small;">
+        <div class="log">
+            <div style="color: rgb(22 163 74 );">Total Logged Time</div>
+            <div style="margin-top: 10px;color: rgb(37 99 235);font-weight: bold;">00.00</div>
+        </div>
+        <div class="log">
+            <div style="color: rgb(2 132 199);">Last Month Logged Time</div>
+            <div style="margin-top: 10px; color: rgb(37 99 235);font-weight: bold;">00.00</div>
+        </div>
+        <div class="log">
+            <div style="color: rgb(22 163 74 );">This Month Logged Time</div>
+            <div style="margin-top: 10px; color: rgb(37 99 235);font-weight: bold;">00.00</div>
+        </div>
+        <div class="log">
+            <div style="color: rgb(2 132 199);">Last Week Logged Time</div>
+            <div style="margin-top: 10px;color: rgb(37 99 235);font-weight: bold;">00.00</div>
+        </div>
+        <div class="log">
+            <div style="color: rgb(22 163 74 );">This Week Logged Time</div>
+            <div style="margin-top: 10px;color: rgb(37 99 235);font-weight: bold;">00.00</div>
+        </div>
+    </div>
+
+    <div>
+        <div><img src="../images/user.png" alt="" class="user-img"></div>
+        <div
+            style=" margin-top: 30px;margin-left: 80px;width: 700px;font-size: 16px;font-weight: bold;color: rgb(80, 76, 76);">
+            ERP Demo 1 Admin</div>
+    </div>
+
+    <div class="profile-form">
+        <div><img src="../images/mail.png" alt="" class="mail-img"></div>
+        <div style=" padding: 20px;font-size: small;margin-left: 30px;color: rgb(46, 59, 131);">abisheck84@gmail.com</div>
+        <div class="pro-f" style="margin-left:20px;">Projects</div>
+        <div">
+            <div class="selecting-values">
+                <div>
+                    <select class="select-value" style="background-color: white;margin-left: 20px;">
+                        <option value="10" class="fg">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="-1">All</option>
+                    </select>
+                </div>
+                <button class="bt1"
+                    style="border-top-left-radius: 3px;border-bottom-left-radius: 3px;margin-left: 10px;color: gray;">Export</button><button
+                    class="bt1"
+                    style="border-top-right-radius: 3px;border-bottom-right-radius: 3px;">Reload</button><button
+                    class="bt1"
+                    style="margin-left: 320px;border-top-left-radius: 4px;border-bottom-left-radius: 4px;">sb</button><input
+                    type="text" placeholder="search.." id="" class="bt1"
+                    style="width: 50px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;">
+
+
+
+
+            </div>
+            <div style="display: flex;margin-top: 20px;" class="proj-table">
+                <button class="table-d">Project Name</button>
+                <button class="table-d">Start Date</button>
+                <button class="table-d">Deadline</button>
+                <button class="table-d">Status</button>
+            </div>
+            <div style="margin-left: 20px;font-weight: lighter;font-size: small;margin-top: 10px;margin-bottom: 10px;color: gray;">
+                No entries found</div>
+    </div>
+</div>
+    <div class="notifications">
+        <div>
+            <div style="display: flex;">
+                <div style="font-size: large;font-weight: bold;color: rgb(73, 71, 71);">Notifications</div>
+                <div style="font-size: smaller;margin-left: 5px;padding-top: 3px;color: rgba(37 99 235);cursor: pointer;">Mark all as read
+                </div>
+            </div>
+            <div style="width: 980px;height: 3px; background-color: rgb(225, 230, 231);margin-top: 10px;">&nbsp;</div>
+        </div>
+        <button
+            style="margin-top: 15px;
+        height: 30px;background-color: rgb(88, 141, 255);color: white;border: none;border-radius: 5px;width: 100px;cursor: pointer;">Load
+            More</button>
+    </div>
+
+
+  
+    <script>
+        fetch("left-dash.html").then(res => res.text()).then(data => {
+            document.querySelector('.dashboard').innerHTML = data;
+        });
+        const dropdown = document.getElementById('dropdownMenu');
+        document.querySelector('.js-click').addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+        });
+    </script>
+</body>
+
+</html>

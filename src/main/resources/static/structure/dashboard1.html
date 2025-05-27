@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style></style>
+
+
+</head>
+
+<body>
+
+
+    <div class="dashboard">
+        <a href="../structure/dashboard1.html" class="css-class"><button class="glass-btn"><img src="../images/home.png"
+                    alt="" class="dash-img"><span style="margin-left: 25px;">Dashboard</span></button></a>
+        
+        <a href="../structure/leads1.html" class="css-class"><button class="glass-btn"><span class="i1-icon"><i
+                        class="fas fa-tty" style="color: #9fa6b2;"></i>
+                </span><span style="margin-left: 25px;">Leads</span></button></a>
+                
+
+    </div>
+
+
+
+    <div class="top-bar">
+        <div class="leftside">
+            <input type="text" name="" class="search" placeholder="Search...">
+            <button class="quick-create"
+                style="width: 30px;height: 30px;margin-top: 20px;margin-left: 10px;border: none;background-color: white;"><img
+                    src="../images/plus.png" alt="" class="in-btn">
+                <div class="msg0">Quick Create</div>
+            </button>
+        </div>
+
+        <div class="rightside">
+            <button class="rs-btns share-docs">
+                <img src="../images/share.png" alt="" class="rs-img">
+                <div class="msg2">Share documents ideas..</div>
+            </button>
+            <button class="rs-btns todo-para"><img src="../images/correct-gray.png" alt="" class="rs-img1">
+                <div class="msg3">Todo items</div>
+            </button>
+
+            <button class="rs-btns user-wrapper js-click" id="userBtn">
+                <div class="user-border">
+                    <img src="../images/user.png" alt="" class="rs-img2">
+                    <div class="msg1">ERP Demo1 Admin</div>
+                </div>
+            </button>
+
+            <button class="rs-btns timesheet"
+                style="margin-left:40px;border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/clock.png" alt="" class="rs-img3">
+                <div class="msg4">My Timesheets</div>
+            </button>
+            <button class="rs-btns notify-data"
+                style="border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/notification.png" alt="" class="rs-img4">
+                <div class="msg5">Notifications</div>
+            </button>
+
+            <div class="dropdown" id="dropdownMenu">
+                <button><a href="profile-page.html" class="drop-class">My Profile</a></button>
+                <button><a href="edit-profile-data.html" class="drop-class">Edit Profile</a></button>
+                <button><a href="login.html" class="drop-class">Logout</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="data-values">
+        <div class="invoices">
+
+            <div class="crosing">
+
+                <div style="display: flex;justify-content: center;align-items: center; " class="">
+                    <div><img src="../images/money.png" alt="" class="inv-img"></div>
+                    <div class="head-para">Invoices Awaiting Payment</div>
+                </div>
+                <div>0/0</div>
+            </div>
+            <div class="progress"></div>
+        </div>
+        <div class="invoices">
+
+            <div class="crosing">
+
+                <div style="display: flex;justify-content: center;align-items: center; " class="">
+                    <div><img src="../images/trend.png" alt="" class="inv-img"></div>
+                    <div class="head-para">Converted Leads</div>
+                </div>
+                <div>0/0</div>
+            </div>
+            <div class="progress"></div>
+        </div>
+        <div class="invoices">
+
+            <div class="crosing">
+
+                <div style="display: flex;justify-content: center;align-items: center; " class="">
+                    <div><img src="../images/sliders-solid.svg" alt="" class="inv-img" style="width: 15px;"></div>
+                    <div class="head-para">Projects in Progress</div>
+                </div>
+                <div>0/0</div>
+            </div>
+            <div class="progress"></div>
+        </div>
+        <div class="invoices">
+
+            <div class="crosing">
+
+                <div style="display: flex;justify-content: center;align-items: center; " class="">
+                    <div><img src="../images/verified.png" alt="" class="inv-img"></div>
+                    <div class="head-para">Invoices Awaiting Payment</div>
+                </div>
+                <div>0/0</div>
+            </div>
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <div class="payment-det">
+
+        <div class="invoice-overview">
+            <div style="display: flex;">
+                <img src="../images/document.png" alt="" class="det-img1">
+                <div class="heading">Invoice overview</div>
+            </div>
+            <div class="type-list">
+                <div class="in-draft1">
+                    <div class="clr-gray">0 Draft</div>
+                    <div class="percentage1">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-gray">0 Not Sent</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-red">0 Unpaid</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-yellow">0 Partially Paid</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-yellow">0 Overdue</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-green">0 Paid</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar" style="margin-bottom: 20px;"></div>
+
+            </div>
+
+        </div>
+        <div class="estimate-overview">
+
+            <div style="display: flex;">
+                <img src="../images/new-document.png" alt="" class="det-img1">
+                <div class="heading">Estimated overview</div>
+            </div>
+            <div class="type-list">
+                <div class="in-draft1">
+                    <div class="clr-gray">0 Draft</div>
+                    <div class="percentage1">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-gray">0 Not Sent</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-blue">0 Sent</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-yellow">0 Expired</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-red">0 Declined</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-green"> 0 Accepted</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar" style="margin-bottom: 20px;"></div>
+
+            </div>
+
+        </div>
+        <div class="proposal-overview">
+
+            <div style="display: flex;">
+                <img src="../images/document.png" alt="" class="det-img1">
+                <div class="heading">Proposal overview</div>
+            </div>
+            <div class="type-list">
+                <div class="in-draft1">
+                    <div class="clr-gray">0 Draft</div>
+                    <div class="percentage1">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-blue">0 Sent</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-gray">0 Open</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-blue">0 Revised</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-red">0 Declined</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar"></div>
+
+            </div>
+            <div class="type-list">
+                <div class="in-draft">
+                    <div class="clr-green">0 Accepted</div>
+                    <div class="percentage">0%</div>
+                </div>
+                <div class="inv-progressbar" style="margin-bottom: 40px;"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="dollars">
+        <div class="inner-data">
+            <div class="out">
+                <div style=" color: rgb(202 138 4);">Outstanding Invoices</div>
+                <div style="margin-top: 7px;color: rgba(37 99 235);">$0.0</div>
+            </div>
+        </div>
+        <div class="inner-data">
+            <div class="out">
+                <div class="clr-gray">Past Due Invoices</div>
+                <div style="margin-top: 7px;color: rgba(37 99 235);">$0.0</div>
+            </div>
+        </div>
+        <div class="inner-data">
+            <div class="out">
+                <div style="  color: rgb(14, 128, 14);">Paid Invoices</div>
+                <div style="margin-top: 7px;color: rgba(37 99 235);">$0.0</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="taskandprojects">
+        <div class="task-btns">
+            <button class="tsk-btn"><img src="../images/task.png" alt="" class="task-img1"><span style="color: gray;">My
+                    Tasks</span></button>
+            <button class="tsk-btn"><img src="../images/project-img.png" alt="" class="task-img"><span
+                    style="color: gray;">My Projects</span></button>
+            <button class="tsk-btn"><img src="../images/clock.png" alt="" class="task-img3"><span
+                    style="color: gray;">Reminders</span></button>
+            <button class="tsk-btn"><i class="far fa-life-ring" style="color: #b7b9bd;"></i><span
+                    style="color: gray;">Tickets</span></button>
+            <button class="tsk-btn"><i class="fa-solid fa-bullhorn" style="color: #bfbfc0;"></i><span
+                    style="color: gray;">Announcements</span></button>
+            <button class="tsk-btn"><i class="fa-solid fa-window-maximize" style="color: #bfc1c4;"></i><span
+                    style="color: gray;">Last Activity</span></button>
+        </div>
+        <hr class="line"><div class="tab1">
+            <div class="view-link"><a href="" class="a-link">View All</a></div>
+            <div class="selecting-values">
+                <div class="tab-value">
+                    <select class="select-value" style="background-color: white;">
+                        <option value="10" style="color: rgb(158, 145, 145);">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="-1">All</option>
+                    </select>
+                </div>
+                <div style="margin-left: 20px;">
+
+                    <button class="bt1"
+                        style="color: gray;border-top-left-radius: 4px;border-bottom-left-radius: 4px;">Export</button><button
+                        class="bt1"
+                        style="border-top-right-radius: 4px;border-bottom-right-radius: 4px;color: gray;">Reload</button><button
+                        class="bt1" style="margin-left: 785px;"><img src="../images/search.png"
+                            style="width: 12px;"></button><input type="text" placeholder="search.." id="" class="bt1"
+                        style="width: 50px;">
+
+
+
+                </div>
+            </div>
+
+            <div class="customer-details">
+                <div><button class="ctr-btn">#</button></div>
+                <div><button class="ctr-btn">Name</button></div>
+                <div><button class="ctr-btn">Status</button></div>
+                <div><button class="ctr-btn">Start Date</button></div>
+                <div><button class="ctr-btn">Tags</button></div>
+                <div><button class="ctr-btn">Priority</button></div>
+            </div>
+
+            <div class="ctr-data" style="font-size: small; color: gray;">No entries found</div>
+        </div>
+    </div>
+
+    <div class="todo-list">
+        <div class="block1">
+            <div style="display: flex;padding-top: 20px;padding-left: 20px;">
+                <div><img src="../images/verified (1).png" class="block1-img"></div>
+                <div style="margin-left: 10px;font-size: small;color: rgb(70, 67, 67);">My To Do Items </div>
+            </div>
+            <div style="padding-top: 20px;">
+                <a href="" class="todo-links" style="font-size: 11px;">View All </a>
+                <a href="" class="todo-links" style="font-size:11px;margin-left: 20px;margin-right: 10px;">New To Do</a>
+            </div>
+        </div>
+        <hr>
+        <img src="../images/alert.png" alt="" class="block1-img1">
+        <img src="../images/correct.png" class="block1-img2">
+        <div class="latest-todo">Latest to do's</div>
+        <div class="latest-todo-datas">No Todos found</div>
+        <div class="finished-todos">Latest finished to do's</div>
+        <div class="finished-todos-data"> No finished todos found</div>
+    </div>
+
+    <div class="leads-overview">
+        <div style="font-size: small; margin-top: 20px; padding-left: 50px;color:rgb(32, 29, 29);">Leads Overview</div>
+        <hr style="margin-top: 20px;">
+        <div class="insights">
+            <div class="c1">Customer</div>
+            <div class="l1">Lost leads</div>
+        </div>
+    </div>
+    <div class="inbetween">&nbsp;</div>
+    <div class="lost-lead-clr">&nbsp;</div>
+
+    <div class="customer-green">&nbsp;</div>
+    <div><img src="../images/money.png" alt="" class="leads-overview-img"></div>
+    <script>
+        const dropdown = document.getElementById('dropdownMenu');
+        document.querySelector('.js-click').addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Demo Admin 1</title>
+    <link rel="stylesheet" href="../styles/edit-profile-data.css">
+</head>
+
+<body>
+    <div class="dashboard"></div>
+    <div class="top-bar">
+        <div class="leftside">
+            <input type="text" name="" class="search" placeholder="Search...">
+            <button class="quick-create" style="width: 30px;height: 30px;margin-top: 20px;margin-left: 10px;border: none;background-color: white;"><img src="../images/plus.png" alt="" class="in-btn"><div class="msg0">Quick Create</div></button>
+        </div>
+
+        <div class="rightside">
+            <button class="rs-btns share-docs">
+                <img src="../images/share.png" alt="" class="rs-img">
+                <div class="msg2">Share documents ideas..</div>
+            </button>
+            <button class="rs-btns todo-para"><img src="../images/correct-gray.png" alt="" class="rs-img1">
+                <div class="msg3">Todo items</div>
+            </button>
+
+            <button class="rs-btns user-wrapper js-click" id="userBtn">
+                <div class="user-border">
+                    <img src="../images/user.png" alt="" class="rs-img2">
+                    <div class="msg1">ERP Demo1 Admin</div>
+                </div>
+            </button>
+
+            <button class="rs-btns timesheet"
+                style="margin-left:40px;border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/clock.png" alt="" class="rs-img3">
+                <div class="msg4">My Timesheets</div>
+            </button>
+            <button class="rs-btns notify-data" style="border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/notification.png" alt="" class="rs-img4">
+                <div class="msg5">Notifications</div>
+            </button>
+
+            <div class="dropdown" id="dropdownMenu">
+                <button><a href="profile-page.html" class="drop-class">My Profile</a></button>
+                <button><a href="edit-profile-data.html" class="drop-class">Edit Profile</a></button>
+                <button><a href="login.html" class="drop-class">Logout</a></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="all-content">
+        <div class="data1">
+
+            <div class="form-group">
+                <label>Profile Image</label>
+                <input type="file">
+            </div>
+            <div class="form-group">
+                <label><span class="required">*</span> First Name</label>
+                <input type="text" value="ERP Demo1">
+            </div>
+            <div class="form-group">
+                <label><span class="required">*</span> Last Name</label>
+                <input type="text" value="Admin">
+            </div>
+            <div class="form-group">
+                <label><span class="required">*</span> Email</label>
+                <input type="email" value="abisheck84@gmail.com.org">
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Default Language</label>
+                <select>
+                    <option>System Default</option>
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Direction</label>
+                <select>
+                    <option>System Default</option>
+                    <option>LTR</option>
+                    <option>RTL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Facebook</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>LinkedIn</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Skype</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Email Signature</label>
+                <textarea></textarea>
+            </div>
+            <button class="save-btn">Save</button>
+        </div>
+        <div class="data2">
+            <div class="a1">
+
+                <div class="form-group">
+                    <label><span class="required">*</span> Old password</label>
+                    <input type="password">
+                </div>
+                <div class="form-group">
+                    <label><span class="required">*</span> New password</label>
+                    <input type="password">
+                </div>
+                <div class="form-group">
+                    <label>Repeat new password</label>
+                    <input type="password">
+                </div>
+                <button class="save-btn1">Save</button>
+            </div>
+
+            <div class="a2">
+
+                <div class="radio-group">
+                    <label><input type="radio" name="2fa" checked> Disabled</label>
+                    <label><input type="radio" name="2fa"> Enable Email Two Factor Authentication</label>
+                    <label><input type="radio" name="2fa"> Enable Google Authenticator</label>
+                </div>
+                <br>
+                <button class="save-btn2">Save</button>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="erp-admin">ERP Demo 1 Admin</h1>
+    <h1 class="pass-change">Change your password</h1>
+    <h1 class="two-fact">Two Factor Authentication</h1>
+    <script>
+        fetch("left-dash.html").then(res => res.text()).then(data => {
+            document.querySelector('.dashboard').innerHTML = data;
+        })
+    </script>
+
+</body>
+
+</html>

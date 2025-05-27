@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="../styles/Staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style> .dashboard button {
+        height: 40px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3px;
+        width: 200px;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: #1e293b;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+
+    }
+  
+
+    .dashboard button:hover {
+        background-color: #334155;
+        border-radius: 10px;
+    }
+
+    .dashboard {
+        
+        position:absolute;
+        width: 200px;
+        row-gap: 30px;
+        position: absolute;
+        background-color: #1e293b;
+        top: 0px;
+        bottom:0px;
+        left: 0; 
+        height: 1300px;
+    }
+    .css-class{
+        text-decoration-line: none;
+        position: relative;
+    }
+    .dash-img{
+        width: 16px;
+        position: absolute;
+        top: 13px;
+
+    }
+    .i-icon{
+        position: absolute;
+    }
+    .i1-icon{
+        position: absolute;
+    }
+    .check-img{
+        position: absolute;
+        width: 17px;
+    }
+    .staff-icon{
+        width: 14px;
+        position: absolute;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        
+        <a href="leads1.html" class="css-class"><button class="js-class "><span class="i1-icon"><i class="fas fa-tty" style="color: #9fa6b2;"></i>
+        </span><span style="margin-left: 25px;">Leads</span></button></a>
+        <a href="staff1.html" class="css-class"><button class="js-class "><img src="../images/receptionist.png" class="staff-icon"> 
+            <span style="margin-left: 25px;">Staff</span></button></a>
+       
+      
+    </div>
+    <div class="top-bar">
+        <div class="leftside">
+            <input type="text" name="" class="search" placeholder="Search...">
+            <button class="quick-create"
+                style="width: 30px;height: 30px;margin-top: 20px;margin-left: 10px;border: none;background-color: white;"><img
+                    src="../images/plus.png" alt="" class="in-btn">
+                <div class="msg0">Quick Create</div>
+            </button>
+        </div>
+
+        <div class="rightside">
+            <button class="rs-btns share-docs">
+                <img src="../images/share.png" alt="" class="rs-img">
+                <div class="msg2">Share documents ideas..</div>
+            </button>
+            <button class="rs-btns todo-para"><img src="../images/correct-gray.png" alt="" class="rs-img1">
+                <div class="msg3">Todo items</div>
+            </button>
+
+            <button class="rs-btns user-wrapper js-click" id="userBtn">
+                <div class="user-border">
+                    <img src="../images/user.png" alt="" class="rs-img2">
+                    <div class="msg1">ERP Demo1 Admin</div>
+                </div>
+            </button>
+
+            <button class="rs-btns timesheet"
+                style="margin-left:40px;border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/clock.png" alt="" class="rs-img3">
+                <div class="msg4">My Timesheets</div>
+            </button>
+            <button class="rs-btns notify-data"
+                style="border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/notification.png" alt="" class="rs-img4">
+                <div class="msg5">Notifications</div>
+            </button>
+
+            <div class="dropdown" id="dropdownMenu">
+                <button><a href="profile-page.html" class="drop-class">My Profile</a></button>
+                <button><a href="edit-profile-data.html" class="drop-class">Edit Profile</a></button>
+                <button><a href="login.html" class="drop-class">Logout</a></button>
+            </div>
+        </div>
+
+    </div>
+    <div><img src="../images/arrow.png" class="arrow-img"></div>
+    <div class="add-task">
+        <div class="ctr.btns">
+            <button class="ctr-btn" onclick="openModal()">New Staff </button>
+
+
+        </div>
+
+        <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+        <div class="modal" id="modal">
+            <form id="staffForm" onsubmit="return false;">
+
+                <div class="modal-header">
+                    <h2 style="font-size: medium; color: gray;">Staff Details</h2>
+                    <button class="close-btn" onclick="closeModal()">×</button>
+                </div>
+                <div class="line0">&nbsp;</div>
+                <div class="form-container">
+                    <div style="font-size: small;margin-bottom: 10px;color: rgb(59, 59, 59);"><span
+                            class="redclr">*</span>Name</div>
+                    <input name="name" type="text" required id="staffname" id="staffname" />
+                    <div style="font-size: small;margin-bottom: 10px;color: rgb(63, 62, 62);">Address</div>
+                    <input name="address" type="text" id="address" itemid="address" />
+
+
+
+                    <div class="two-sheets">
+                        <div>
+                            <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);"><span
+                                    class="redclr">*</span>Experience</div>
+                            <input name="experience" type="text" style="width: 200px;color: gray;" id="experience" />
+                        </div>
+                        <div>
+                            <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);">Hours work</div>
+                            <input type="text" style="width: 200px;color: gray;" id="hours_work" name="hoursWorked">
+                        </div>
+                    </div>
+
+
+                    <div style="font-size: small;margin-bottom: 6px;color: rgb(19, 18, 18);">Martail Status</div>
+                    <select name="maritalStatus" style="width: 250px;color: rgb(5, 5, 5);font-size: small;"
+                        id="martial">
+                        <option style="color: rgb(5, 5, 5);">Single</option>
+                        <option>Married</option>
+
+                    </select>
+                    <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);">phone</div>
+                    <input name="phone" type="text" placeholder="Enter your number" style="width: 200px;color: gray;"
+                        id="phone" />
+
+
+                    <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);">Course</div>
+                    <select name="course" style="color: gray;width: 250px;font-size: small;" id="course">
+                        <option disabled selected>Machine Learning</option>
+                        <option>Deep Learning</option>
+                        <option>AI and Robotics</option>
+                        <option>Digital Marketting</option>
+                        <option>Full Stack Development</option>
+
+
+                    </select>
+
+                    <div class="two-sheets1 ">
+                        <div>
+                            <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);">Disabilities</div>
+                            <select name="disabilities" style="width: 230px;color: gray;font-size: small;"
+                                id="disabilities">
+                                <option disabled selected>Nothing Selected</option>
+                                <option>yes</option>
+                                <option>no</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);margin-left: 20px;">
+                                E-mail</div>
+                            <input type="email" style="width: 200px;color: gray;" id="email" name="email" />
+                        </div>
+                    </div>
+
+                    <div style="font-size: small;margin-bottom: 6px;color: rgb(63, 62, 62);">Emergency Contact number
+                    </div>
+                    <input type="text" style="width: 200px;color: gray;" id="emergency_contact" name="emergencyContact"
+                        id="emergencyContact" />
+                    <div class="line1">&nbsp;</div>
+                    <div class="action-btns">
+                        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+                        <button class="save" onclick="submitData()" type="submit" value="Save">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div style="margin-right: 30px; position: relative;">
+
+            <button onclick="blockdata()" style="border: none;cursor: pointer;"><img src="../images/filter.png"
+                    class="filter-img"></button>
+        </div>
+
+    </div>
+
+
+    <div class="task-filters" style="display: flex;flex-direction: column;font-size: small;">
+
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; align-items:first baseline; border-radius: 4px; cursor: pointer;">All</button>
+        <hr style="margin: 10px 0; color: rgb(255, 255, 255);">
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Not
+            Started</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none;; border-radius: 4px; cursor: pointer;">In
+            Progress</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Testing</button>
+        <button class="btn"
+            style="margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Awaiting
+            Feedback</button>
+        <button class="btn"
+            style="margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Complete</button>
+
+        <hr style="margin: 10px 0;">
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff;border: none; border-radius: 4px; cursor: pointer;">Today's
+            tasks</button>
+        <button class="btn" style="margin: 4px; background:#fff;border: none; border-radius: 4px; cursor: pointer;">Due
+            Date
+            Passed</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Upcoming
+            Tasks</button>
+
+        <hr style="margin: 10px 0;">
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Students assigned
+            to me</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Students I'm
+            following</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Not
+            Assigned</button>
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Recurring</button>
+
+        <hr style="margin: 10px 0;">
+
+        <button class="btn"
+            style=" margin: 4px; background:#fff;border: none; border-radius: 4px; cursor: pointer;">Billable</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Billed</button>
+        <button class="btn"
+            style=" margin: 4px; background:#fff; border: none; border-radius: 4px; cursor: pointer;">Not
+            Billed</button>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="task-para">Staff Summary</div>
+    <div class="task-summary">
+        <div class="total-task">
+            <div style="margin-bottom: 30px; margin-left: 30px;">
+                <span style="margin-right: 10px;font-weight: bolder ; ;">0</span>
+                <span style="color: gray;font-size: small;">Not Started</span>
+            </div>
+            <div
+                style="width: 1px; height: 45px; background-color: rgb(134, 126, 126);margin-right: 10px;margin-bottom: 10px;">
+            </div>
+
+        </div>
+        <div class="total-task">
+            <div style="margin-bottom: 30px; margin-left: 10px;">
+                <span style="margin-right: 10px;font-weight: bolder ; ;">0</span>
+                <span style="color: rgb(19, 122, 129);font-size: small;">In Progress</span>
+            </div>
+            <div
+                style="width: 1px; height: 45px; background-color: rgb(134, 126, 126);margin-right: 10px;margin-bottom: 10px;">
+            </div>
+
+        </div>
+        <div class="total-task">
+            <div style="margin-bottom: 30px; margin-left: 10px;">
+                <span style="margin-right: 10px;font-weight: bolder ; ;">0</span>
+                <span style="color: rgb(43, 91, 180);font-size: small;">Testing</span>
+            </div>
+            <div
+                style="width: 1px; height: 45px; background-color: rgb(134, 126, 126);margin-right: 10px;margin-bottom: 10px;">
+            </div>
+
+        </div>
+        <div class="total-task">
+            <div style="margin-bottom: 30px; margin-left: 10px;">
+                <span style="margin-right: 10px;font-weight: bolder ; ;">0</span>
+                <span style="color: rgb(29, 214, 29);font-size: small;">Awaiting Feedback</span>
+            </div>
+            <div
+                style="width: 1px; height: 45px; background-color: rgb(134, 126, 126);margin-right: 10px;margin-bottom: 10px;">
+            </div>
+
+        </div>
+        <div class="total-task">
+            <div style="margin-bottom: 30px; margin-left: 10px;">
+                <span style="margin-right: 10px;font-weight: bolder ; ;">0</span>
+                <span style="color: rgb(20, 173, 84);font-size: small;">Complete</span>
+            </div>
+
+
+
+        </div>
+
+        <div><img src="../images/google-docs.png" class="docs-img"></div>
+    </div>
+    <div class="task-assigned">Tasks assigned to me:0</div>
+    <div class="task-assigned1">Tasks assigned to me:0</div>
+    <div class="task-assigned2">Tasks assigned to me:0</div>
+    <div class="task-assigned3">Tasks assigned to me:0</div>
+    <div class="task-assigned4">Tasks assigned to me:0</div>
+
+
+    <div class="data-schedule">
+
+
+
+        <div class="values">
+            <div class="selecting-values">
+                <div>
+                    <select class="select-value">
+                        <option value="10" class="fg">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="-1">All</option>
+                    </select>
+                </div>
+                <div style="margin-left: 20px;">
+
+                    <button class="bt1"
+                        style="border-top-left-radius: 3px;border-bottom-left-radius: 3px;font-size: small;">Export</button><button
+                        class="bt1">Bulk Actions</button><button class="bt1"
+                        style="border-top-right-radius: 3px;border-bottom-right-radius: 3px; background-color: white;"><img
+                            src="../images/reload.png" class="reload-img"></button><button class="bt1"
+                        style="margin-left: 1170px;cursor: pointer;"><img src="../images/search.png"
+                            class="search-img"></button><input type="text" placeholder="search.." id="" class="bt1"
+                        style="width: 50px;">
+
+
+
+                </div>
+            </div>
+
+
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>email</th>
+                        <th>martial Status</th>
+                        <th>Experience</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody id="taskTableBody" style="text-align: center;">
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <script>
+           
+            const dropdown = document.getElementById('dropdownMenu');
+            document.querySelector('.js-click').addEventListener('click', function (e) {
+                e.preventDefault();
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+            });
+            function openModal() {
+                document.getElementById("modal").classList.add("active");
+                document.getElementById("overlay").classList.add("active");
+            };
+
+            function closeModal() {
+                document.getElementById("modal").classList.remove("active");
+                document.getElementById("overlay").classList.remove("active");
+            };
+
+            function blockdata() {
+                const data = document.querySelector('.task-filters');
+                data.classList.add('.active');
+            }
+            function submitData() {
+    const staffData = {
+        name: document.getElementById('staffname').value,
+        address: document.getElementById('address').value,
+        experience: document.getElementById('experience').value,
+        hoursWorked: document.getElementById('hours_work').value,
+        maritalStatus: document.getElementById('martial').value,
+        phone: document.getElementById('phone').value,
+        course: document.getElementById('course').value,
+        disabilities: document.getElementById('disabilities').value,
+        email: document.getElementById('email').value,
+        emergencyContact: document.getElementById('emergency_contact').value
+    };
+
+    fetch('http://localhost:8080/poststaff', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(staffData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to save data');
+        }
+        
+    })
+    .then(data => {
+        console.log('Data saved:', data);
+        closeModal(); // close the modal after saving
+        fetchStaffData(); // 🔥 refresh your table data here
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+function fetchStaffData() {
+
+    const tableBody = document.getElementById('taskTableBody');
+    tableBody.innerHTML = ''; 
+    fetch('http://localhost:8080/getstaff')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Fetched staff:', data);
+            data.forEach(data => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                <td class="abi">${data.name || '-'}</td>
+                <td class="abi">${data.phone || '-'}</td>
+                <td class="abi">${data.email || '-'}</td>
+                <td class="abi">${data.maritalStatus || '-'}</td>
+                <td class="abi">${data.experience|| '-'}</td>
+            
+                
+            `;
+                        tableBody.appendChild(row);
+                    });
+            
+        })
+        .catch(error => console.error('Error fetching staff:', error));
+}
+
+            
+           
+
+            window.onload = fetchStaffData();
+
+        </script>
+
+
+</body>
+
+</html>

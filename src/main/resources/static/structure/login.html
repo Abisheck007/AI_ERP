@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+<link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+ <div class="heading">Login</div>
+  <form id="loginForm" class="login">
+    <div class="div">Username</div>
+    <input  type="text" name="username"required />
+    <div class="div">password</div>
+    
+    <input type="password" name="password" required>
+    
+
+    <div class="div">Role</div>
+    <select name="role" required>
+      <option value="">--Choose Role--</option>
+      <option value="ADMIN">Admin</option>
+      <option value="STAFF">Staff</option>
+    </select><br>
+
+    <button type="submit" class="lgn-btn">Login</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const params = new URLSearchParams(formData);
+
+      const res = await fetch("http://localhost:8080/login", {
+        method: "POST",
+        body: params
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        localStorage.setItem("username", data.username);
+        localStorage.setItem("role", data.role);
+        window.location.href = "Landing_page.html";
+      } else {
+        alert("Invalid credentials or role mismatch");
+      }
+    });
+  </script>
+</body>
+
+</html>

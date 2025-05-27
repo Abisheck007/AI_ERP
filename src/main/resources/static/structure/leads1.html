@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads</title>
+    <link rel="stylesheet" href="../styles/leads.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .dashboard button {
+            height: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            margin-top: 3px;
+            width: 200px;
+            text-align: left;
+            align-items: flex-start;
+            justify-content: center;
+            background: linear-gradient(135deg, #2a78ff, #fd5ec9);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+
+        }
+
+
+        .dashboard button:hover {
+            background-color: #334155;
+            border-radius: 10px;
+        }
+
+        .dashboard {
+
+            position: absolute;
+            width: 200px;
+            row-gap: 30px;
+            position: absolute;
+            background-color: #5e54bb;
+            top: 0px;
+            bottom: 0px;
+            left: 0;
+            height: 1300px;
+        }
+
+        .css-class {
+            text-decoration-line: none;
+            position: relative;
+        }
+
+        .dash-img {
+            width: 16px;
+            position: absolute;
+            top: 13px;
+
+        }
+
+        .i-icon {
+            position: absolute;
+        }
+
+        .i1-icon {
+            position: absolute;
+        }
+
+        .check-img {
+            position: absolute;
+            width: 17px;
+        }
+
+        .staff-icon {
+            width: 14px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard" id="dashboard-show">
+        <a href="../structure/dashboard1.html" class="css-class"><button class="glass-btn"><img src="../images/home.png"
+                    alt="" class="dash-img"><span style="margin-left: 25px;">Dashboard</span></button></a>
+        <a href="../structure/leads1.html" class="css-class"><button class="glass-btn"><span class="i1-icon"><i
+                        class="fas fa-tty" style="color: #9fa6b2;"></i>
+                </span><span style="margin-left: 25px;">Leads</span></button></a>
+
+
+
+
+    </div>
+    <div class="top-bar">
+        <div class="leftside">
+            <input type="text" name="" class="search" placeholder="Search...">
+            <button class="quick-create"
+                style="width: 30px;height: 30px;margin-top: 20px;margin-left: 10px;border: none;background-color: white;"><img
+                    src="../images/plus.png" alt="" class="in-btn">
+                <div class="msg0">Quick Create</div>
+            </button>
+        </div>
+        <div class="rightside">
+            <button class="rs-btns share-docs">
+                <img src="../images/share.png" alt="" class="rs-img">
+                <div class="msg2">Share documents ideas..</div>
+            </button>
+            <button class="rs-btns todo-para"><img src="../images/correct-gray.png" alt="" class="rs-img1">
+                <div class="msg3">Todo items</div>
+            </button>
+
+            <button class="rs-btns user-wrapper js-click" id="userBtn">
+                <div class="user-border">
+                    <img src="../images/user.png" alt="" class="rs-img2">
+                    <div class="msg1">ERP Demo1 Admin</div>
+                </div>
+            </button>
+
+            <button class="rs-btns timesheet"
+                style="margin-left:40px;border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/clock.png" alt="" class="rs-img3">
+                <div class="msg4">My Timesheets</div>
+            </button>
+            <button class="rs-btns notify-data"
+                style="border: 1px solid rgb(212, 208, 208);height: 29px;border-radius: 6px;"><img
+                    src="../images/notification.png" alt="" class="rs-img4">
+                <div class="msg5">Notifications</div>
+            </button>
+
+            <div class="dropdown" id="dropdownMenu">
+                <button><a href="profile-page.html" class="drop-class">My Profile</a></button>
+                <button><a href="edit-profile-data.html" class="drop-class">Edit Profile</a></button>
+                <button><a href="login.html" class="drop-class">Logout</a></button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="class-container" id="class-container">
+        <div class="leads-sum">Leads Summary</div>
+        <div class="landg">
+            <div class="flex-mod">
+                <div class="landg-text">
+                    0 Customer
+                </div>
+                <div class="line">
+                </div>
+                <div class="lost-leads">0% Lost Leads</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="values">
+        <div class="selecting-values">
+            <div>
+                <select class="select-value">
+                    <option value="10" class="fg">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="-1">All</option>
+                </select>
+            </div>
+            <div style="margin-left: 20px;">
+
+                <button class="bt1"
+                    style="border-top-left-radius: 3px;border-bottom-left-radius: 3px;cursor: pointer;">Export</button><button
+                    class="bt1" style="cursor: pointer;">Bulk Actions</button><button class="bt1"
+                    style="border-top-right-radius: 3px;border-bottom-right-radius: 3px; background-color: white;cursor: pointer;"><img
+                        src="../images/reload.png" class="reload-img"></button><button class="bt1"
+                    style="margin-left: 1170px;border-top-left-radius: 5px;border-bottom-left-radius: 5px;cursor: pointer;"><img
+                        src="../images/search.png" class="search-img"></button><input type="text" placeholder="search.."
+                    id="" class="bt1" style="width: 50px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;">
+
+
+
+            </div>
+        </div>
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th style="width: 200px;">Email</th>
+                    <th>Phone</th>
+                    <th>Enrolled Course</th>
+                    <th>Assigned to</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody id="taskTableBody" style="text-align: center;"></tbody>
+        </table>
+    </div>
+
+    <script>
+
+        const role = localStorage.getItem("role");
+        const username = localStorage.getItem("username");
+
+
+
+
+        const dropdown = document.getElementById('dropdownMenu');
+        document.querySelector('.js-click').addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+        });
+
+        function openModal() {
+            document.getElementById("modal").classList.add("active");
+            document.getElementById("overlay").classList.add("active");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+            document.getElementById("overlay").classList.remove("active");
+        }
+
+
+        window.onload = function () {
+            fetch(`http://localhost:8080/with-staffname?staffName=${username}`)
+                .then(res => res.json())
+                .then(data => {
+                    const tableBody = document.getElementById("taskTableBody");
+                    data.forEach((lead, index) => {
+                        const row = document.createElement("tr");
+
+                        row.innerHTML = `
+                    <td class="abi" onmouseover="showButton(${index})" onmouseout="hideButton(${index})">
+                        ${lead.name}
+                        <button id="showBtn${index}" class="show-btn" style="display:none;" onclick='showDetails(${JSON.stringify(lead)})'>Show All</button>
+                    </td>
+                    
+                    <td class="abi">${lead.phone}</td>
+                    <td class="abi">${lead.email}</td>
+                    <td class="abi">${lead.enrolledCourse}</td>
+                    <td class="abi">${lead.staffName}</td>
+               `;
+                        tableBody.appendChild(row);
+                    });
+                });
+        };
+
+        function showButton(index) {
+            document.getElementById(`showBtn${index}`).style.display = "inline-block";
+        }
+
+        function hideButton(index) {
+            document.getElementById(`showBtn${index}`).style.display = "none";
+        }
+
+        function showDetails(lead) {
+            let modalHtml = `
+            <div class="popup" id="detailPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeDetails()">&times;</span>
+                    <h3>Lead Details</h3>
+                    
+
+                    <form id="leadForm" style="margin-top: 20px;">
+            
+        
+
+           
+
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+
+                <div>
+                    <div style="font-size: small;color: rgb(39, 39, 39);margin-bottom: 10px;"><span
+                            style="color: red;">*</span>
+                        Name</div>
+                        <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.name}">
+                    
+                </div>
+                <div>
+                    <div style="color: rgb(49, 49, 49);font-size: small;margin-bottom: 10px;">Address</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.address}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(58, 58, 58);margin-bottom: 10px;"> Position</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.position}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(41, 41, 41);font-size: small;margin-bottom: 10px;">City</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.city}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(43, 43, 43);margin-bottom: 10px;">Email</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.email}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(39, 39, 39);font-size: small;margin-bottom: 10px;">State</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.state}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(59, 59, 59);margin-bottom: 10px;">Website</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.website}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(49, 49, 49);font-size: small;margin-bottom: 10px;">Country</div>
+                    <select name="" id="" style="width: 370px;color: gray;">
+                        <option >${lead.country}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(58, 58, 58);margin-bottom: 10px;">Phone</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.phone}" />
+                </div>
+                <div>
+                    <div style="color: gray;font-size: small;margin-bottom: 10px;">Zipcode</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.zipcode}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                <div style="color: rgb(54, 54, 54);font-size: small;margin-bottom: 10px;">course enrolled</div>
+                <input type="text" name="" id="" style="width:340px" placeholder="${lead.enrolledCourse}">
+            </div>
+                <div>
+                    <div style="color: rgb(58, 58, 58);font-size: small;margin-bottom: 10px;">Secondary address</div>
+                    <select name="" id="" style="font-size: small;color: gray;width:370px;">
+                        <option value="">${lead.secondaryAddress}</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="color: rgb(54, 54, 54);font-size: small;margin-bottom: 10px;">Description</div>
+            <textarea rows="4">${lead.description}</textarea>
+            
+        </form>
+                </div>
+            </div>
+        `;
+            document.body.insertAdjacentHTML("beforeend", modalHtml);
+        }
+
+        function putDetails(lead) {
+            let modalHtml = `
+            <div class="popup" id="detailPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeDetails()">&times;</span>
+                    <h3>Lead Details</h3>
+                    
+
+                    <form id="leadForm" style="margin-top: 20px;">
+            
+            <div class="div-3">
+                <div class="data">
+                    <div style="font-size: small;color: gray;margin-bottom: 10px;"><span class="redclr">*</span>Status</div>  
+                    <select style="color: gray;font-size: small;" >
+                        <option>${lead.source}</option>
+                       
+
+                          <option>New Enquiry</option>
+                        <option>Student</option>
+                        <option>Not interested</option>
+                    </select>
+                    </select>
+                </div>
+                <div class="data">
+                    <div style="font-size: small;color: gray;margin-bottom: 10px;"><span class="redclr">*</span>Source</div>
+                    <select style="color: gray;font-size: small;" required>
+                        <option value="" disabled selected>${lead.assignedTo}</option>
+                        <option>Facebook</option>
+                        <option>Google</option>
+                        <option>Twitter</option>
+                        <option>Friends</option>
+                        <option>Staff</option>
+                    </select>
+                </div>
+                <div class="data">
+                    <div style="font-size: small;color: gray;margin-bottom: 10px;">Assigned</div>
+                    <select style="color: gray;font-size: small;" required>
+                        
+                        <option>${lead.name}</option>
+                        <option>chitra</option>
+                        <option>Mukesh</option>
+                        <option>Arun</option>
+                        <option>Dhanapal</option>
+                        <option>Arjun</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="line1">&nbsp;</div>
+
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+
+                <div>
+                    <div style="font-size: small;color: rgb(39, 39, 39);margin-bottom: 10px;"><span
+                            style="color: red;">*</span>
+                        Name</div>
+                        <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.address}">
+                    
+                </div>
+                <div>
+                    <div style="color: rgb(49, 49, 49);font-size: small;margin-bottom: 10px;">Address</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.position}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(58, 58, 58);margin-bottom: 10px;"> Position</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.city}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(41, 41, 41);font-size: small;margin-bottom: 10px;">City</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.email}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(43, 43, 43);margin-bottom: 10px;">Email</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.state}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(39, 39, 39);font-size: small;margin-bottom: 10px;">State</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.website}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(59, 59, 59);margin-bottom: 10px;">Website</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.country}"/>
+                </div>
+                <div>
+                    <div style="color: rgb(49, 49, 49);font-size: small;margin-bottom: 10px;">Country</div>
+                    <select name="" id="" style="width: 370px;color: gray;">
+                        <option >${lead.phone}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                    <div style="font-size: small;color: rgb(58, 58, 58);margin-bottom: 10px;">Phone</div>
+                    <input type="text"  required style="width: 340px;" placeholder="${lead.zipcode}" />
+                </div>
+                <div>
+                    <div style="color: gray;font-size: small;margin-bottom: 10px;">Zipcode</div>
+                    <input type="text" name="" id="" style="width: 340px;" placeholder="${lead.enrolledCourse}">
+                </div>
+            </div>
+            <div style="display: flex;justify-content: space-between;margin-right: 0px;">
+                <div>
+                <div style="color: rgb(54, 54, 54);font-size: small;margin-bottom: 10px;">course enrolled</div>
+                <input type="text" name="" id="" style="width:340px" placeholder="${lead.secondaryAddress}">
+            </div>
+                <div>
+                    <div style="color: rgb(58, 58, 58);font-size: small;margin-bottom: 10px;">Secondary address</div>
+                    <select name="" id="" style="font-size: small;color: gray;width:370px;">
+                        <option value="">${lead.position}</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div style="color: rgb(54, 54, 54);font-size: small;margin-bottom: 10px;">Description</div>
+            <textarea rows="4">${lead.description}</textarea>
+            <div class="action-btns1" style="display: flex; margin-left: 350px;">
+                    <button type="button" class="cancel" onclick="closeedit()">Cancel</button>
+                    <button type="submit" class="save1" id="clasen">Save Changes</button>
+                </div>
+        </form>
+                </div>
+            </div>
+        `;
+
+
+            document.body.insertAdjacentHTML("beforeend", modalHtml);
+        }
+        function closeDetails() {
+            const popup = document.getElementById("detailPopup");
+            if (popup) popup.remove();
+        }
+    </script>
+
+</body>
+
+</html>
